@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/style.css" />
+  <title>Cake</title>
+</head>
+
+<body class="container">
+  <!-- Диалоговое окно подсказки и сообщений -->
+  <dialog class="alert-dialog" id="alertPop-up">
+    <div class="alert-dialog__content" id="alertContent">
+
+    </div>
+  </dialog>
+
+  <!-- Диалоговое окно имени и телефона -->
+  <dialog class="data-dialog" id="dataPop-up">
+    <div class="data-dialog__content" id="dataContent">
+      <h2 class="title-2">Введите данные для связи с вами</h2>
+      <form action="submit" class="msg-form" id="tg-form">
+        <div class="form-group">
+          <label for="" class="msg-form__label">Имя</label>
+          <input type="text" name="name" class="msg-form__input" />
+        </div>
+        <div class="form-group">
+          <label for="" class="msg-form__label">Телефон</label>
+          <input type="tel" name="phone" class="msg-form__input" />
+        </div>
+        <!-- <div class="form-group">
+          <label for="" class="msg-form__label">Message</label>
+          <textarea id="msg" class="msg-form__textarea"></textarea>
+        </div> -->
+
+        <input type="submit" value="Отправить" id="sendBtn" class="btn" />
+        <input type="button" value="Отменить" id="sendBtn" class="btn-close" onclick="closeDataForm()"/>
+      </form>
+    </div>
+  </dialog>
+
+  <!-- секция header -->
+  <header class="header wrap">
+    <h1 class="header-title"> Калькулятор тортов</h1>
+  </header>
+  <!-- секция калькулятора -->
+  <section class="calc wrap">
+    <h2 class="calc_title">Выберите необходимые ингредиенты </h2>
+    <form action="submit" class="calc_cake-form" id="calc-form">
+      <!-- <input type="text" class="calc-form__input" placeholder="Бисквит"> -->
+      <p>Бисквит</p>
+      <select name="cake" class="calc_form-input">
+        <option value='apple'>Яблоко</option>
+        <option value='banana'>Банан</option>
+        <option value='orange'>Апельсин</option>
+      </select>
+      <p>Наполнитель</p>
+      <select name="jam" class="calc_form-input">
+        <option value='apple'>Яблоко</option>
+        <option value='banana'>Банан</option>
+        <option value='orange'>Апельсин</option>
+      </select>
+      <p>Фрукты</p>
+      <select name="fruit" class="calc_form-input">
+        <option value='apple'>Яблоко</option>
+        <option value='banana'>Банан</option>
+        <option value='orange'>Апельсин</option>
+      </select>
+      <p>Вес торта</p>
+      <select name="weight" class="calc_form-input">
+        <option value='1'>1 кг (5-8 человек)</option>
+        <option value='2'>2 кг (8-12 человек)</option>
+        <option value='3'>3 кг (12-20 человек)</option>
+      </select>
+      <input type="submit" class="calc_form-button" value="Рассчитать">
+      <input type="button" class="calc_form-button" value="Отправить заявку" onclick="openUserDataForm()"
+        id="sendButton">
+    </form>
+    <div class="calc_coast">
+      <h2 class="calc_coast-title">
+        Предварительная стоимость изделия:
+      </h2>
+      <div class="calc_coast-price" id="coast">0 <span>руб.</span></div>
+    </div>
+    <p class="calc__conditions">
+      Оставляя заявку, вы соглашаетесь на
+      <span class="calc__conditions--accent-orange">обработку персональных данных</span>
+      и с
+      <span class="calc__conditions--accent-orange">условиями бронирования счёта</span>
+    </p>
+  </section>
+  <script src="../js/cake-calc-service.js"></script>
+</body>
+
+</html>

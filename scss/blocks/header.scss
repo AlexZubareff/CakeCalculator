@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  // border: 1px solid black;
+  min-height: 100px;
+  // background: url(../../img/header-cake.jpg) no-repeat;
+
+  &-title {
+    @include font(28px, 700, 32px, 0%, left, $accent_orange);
+  }
+}
