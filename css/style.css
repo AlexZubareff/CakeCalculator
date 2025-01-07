@@ -290,7 +290,7 @@ body {
   border-radius: 5px;
   color: #000000;
   appearance: none;
-  background: #fff url("../../img/down_arrow.svg") no-repeat 125%;
+  background: #fff url("../../img/down-arrow.svg") no-repeat 125%;
   background-size: 40% 40%;
   font-family: inherit;
 }
