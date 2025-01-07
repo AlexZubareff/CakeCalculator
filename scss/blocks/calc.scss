@@ -142,7 +142,7 @@
   // background: url(../../img/free-cake-vectors.jpg) no-repeat;
 
   &::after {
-    background: url('../../img/free-cake-vectors.jpg') repeat scroll 0 0 transparent;
+    background: url("../../img/free-cake-vectors.jpg") repeat scroll 0 0 transparent;
     opacity: 0.1;
     bottom: 0;
     content: "";
@@ -175,7 +175,7 @@
     border-radius: 5px;
     color: $black;
     appearance: none;
-    background: #fff url(../../img/down_arrow.svg) no-repeat calc(125%);
+    background: #fff url("../../img/down_arrow.svg") no-repeat calc(125%);
     background-size: 40% 40%;
     font-family: inherit;
 
