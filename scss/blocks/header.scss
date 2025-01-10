@@ -4,10 +4,59 @@
   align-items: center;
   padding: 10px 0;
   // border: 1px solid black;
-  min-height: 100px;
+  min-height: 80px;
   // background: url(../../img/header-cake.jpg) no-repeat;
 
   &-title {
     @include font(28px, 700, 32px, 0%, left, $accent_orange);
   }
+}
+
+// Медиа запросы
+@media screen and (max-width: 1440px) {}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    min-height: 70px;
+
+    &-title {
+      @include font(24px, 700, 28px, 0%, left, $accent_orange);
+    }
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    min-height: 60px;
+
+    &-title {
+      @include font(24px, 700, 28px, 0%, left, $accent_orange);
+    }
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    min-height: 50px;
+padding: 0 0;
+
+    &-title {
+      @include font(24px, 700, 28px, 0%, left, $accent_orange);
+    }
+  }
+
+}
+
+@media screen and (max-width: 425px) {
+  .header {
+    min-height: 50px;
+padding: 0 0;
+
+    &-title {
+      @include font(24px, 700, 28px, 0%, left, $accent_orange);
+    }
+  }
+
 }

@@ -235,60 +235,195 @@
 }
 
 // Медиа запросы
+@media screen and (max-width: 2560px) {
+  .calc {
+    &_cake-form {
+      width: 35%;
+    }
+
+    &_title {
+      // @include font(20px, 700, 24px, 0%, left, $accent_orange);
+      padding-bottom: 10px;
+    }
+
+    &_coast {
+      // @include font(18px, 500, 24px, 0%, left, $accent_orange);
+      padding: 20px 10px;
+    }
+
+    &_coast-title {
+      @include font(24px, 500, 28px, 0%, left, $accent_orange);
+    }
+
+    &_coast-price {
+      @include font(26px, 700, px, 0%, right, $accent_orange);
+    }
+
+    &__conditions {
+      @include font(16px, 400, 24px, 0%, center, $accent_orange);
+      padding: 10px;
+    }
+  }
+}
 @media screen and (max-width: 1440px) {
-  .calc_cake-form {
-    width: 35%;
+  .calc {
+    &_cake-form {
+      width: 35%;
+    }
+
+    &_title {
+      // @include font(20px, 700, 24px, 0%, left, $accent_orange);
+      padding-bottom: 10px;
+    }
+
+    &_coast {
+      // @include font(18px, 500, 24px, 0%, left, $accent_orange);
+      padding: 20px 10px;
+    }
+
+    &_coast-title {
+      @include font(24px, 500, 28px, 0%, left, $accent_orange);
+    }
+
+    &_coast-price {
+      @include font(26px, 700, px, 0%, right, $accent_orange);
+    }
+
+    &__conditions {
+      @include font(16px, 400, 24px, 0%, center, $accent_orange);
+      padding: 10px;
+    }
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .calc_cake-form {
-    width: 45%;
-
-    &_form-input {
-
-      background: #fff url("../img/down-arrow.svg") no-repeat calc(120%);
+  .calc {
+    &_cake-form {
+      width: 45%;
 
     }
-  }
+    &_form-input {
 
+      background: #fff url("../img/down-arrow.svg") no-repeat calc(100%);
+      background-size: 10% 50%;
+
+    }
+
+    &_title {
+      // @include font(20px, 700, 24px, 0%, left, $accent_orange);
+      padding-bottom: 10px;
+    }
+
+    &_coast {
+      // @include font(18px, 500, 24px, 0%, left, $accent_orange);
+      padding: 20px 10px;
+    }
+
+    &_coast-title {
+      @include font(24px, 600, 28px, 0%, left, $accent_orange);
+    }
+
+    &_coast-price {
+      @include font(28px, 700, 32px, 0%, right, $accent_orange);
+    }
+
+    &__conditions {
+      @include font(16px, 400, 24px, 0%, center, $accent_orange);
+      padding: 10px;
+    }
+  }
 }
 
 @media screen and (max-width: 768px) {
-  .calc_cake-form {
-    width: 50%;
+  .calc {
+    &_cake-form {
+      width: 50%;
 
+
+    }
     &_form-input {
 
-      background: #fff url("../img/down-arrow.svg") no-repeat calc(115%);
+      background: #fff url("../img/down-arrow.svg") no-repeat calc(100%);
+      background-size: 10% 50%;
 
+    }
+
+    &_title {
+      @include font(20px, 700, 24px, 0%, left, $accent_orange);
+      padding-bottom: 10px;
+    }
+
+    &_coast {
+      // @include font(18px, 500, 24px, 0%, left, $accent_orange);
+      padding: 20px 10px;
+    }
+
+    &_coast-title {
+      @include font(20px, 600, 24px, 0%, left, $accent_orange);
+    }
+
+    &_coast-price {
+      @include font(24px, 700, 24px, 0%, left, $accent_orange);
+    }
+
+    &__conditions {
+      @include font(16px, 400, 24px, 0%, center, $accent_orange);
+      padding: 10px;
     }
   }
 
 }
 
-@media screen and (max-width: 452px) {
-  .calc_cake-form {
-    width: 45%;
+@media screen and (max-width: 425px) {
+  .calc {
+    &_cake-form {
+      width: 60%;
 
+
+    }
     &_form-input {
 
       background: #fff url("../img/down-arrow.svg") no-repeat calc(100%);
+      background-size: 15% 50%;
+    }
 
+    &_title {
+      @include font(18px, 500, 24px, 0%, center, $accent_orange);
+      padding-bottom: 10px;
+    }
+
+    &_coast {
+      // @include font(18px, 500, 24px, 0%, left, $accent_orange);
+      padding: 20px 10px;
+    }
+
+    &_coast-title {
+      @include font(18px, 600, 24px, 0%, left, $accent_orange);
+    }
+
+    &_coast-price {
+      @include font(22px, 700, 24px, 0%, left, $accent_orange);
+    }
+
+    &__conditions {
+      @include font(14px, 400, 24px, 0%, center, $accent_orange);
+      padding: 10px;
     }
   }
 
 }
 
-@media screen and (max-width: 452px) {
-  .calc_cake-form {
-    width: 70%;
+@media screen and (max-width: 320px) {
+  .calc {
+    &_cake-form {
+      width: 70%;
+
+    }
 
     &_form-input {
 
       background: #fff url("../img/down-arrow.svg") no-repeat calc(100%);
-
+      background-size: 15% 50%;
     }
   }
-
 }

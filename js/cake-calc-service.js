@@ -98,6 +98,16 @@ document.getElementById('tg-form').addEventListener('submit', function (e) {
       alertElementPopup.close()
       alertElementPopup.style.borderColor = ''
     }, 2000)
+  } else if (!ValidPhone(userPhone)) {
+    content.innerHTML = `<h1>Номер телефона введен не верно!</h1>`
+    alertElementPopup.style.borderColor = 'red'
+    alertElementPopup.style.color = 'red'
+    alertElementPopup.show()
+
+    setTimeout(() => {
+      alertElementPopup.close()
+      alertElementPopup.style.borderColor = ''
+    }, 2000)
   } else {
     sendOrder(userName, userPhone)
     dataElementPopup.close()
@@ -147,6 +157,14 @@ function sendOrder(userName, userPhone) {
   }, 2000)
 }
 
+// Функция закрытия формы ввода данных пользователя
 function closeDataForm() {
   dataElementPopup.close()
+}
+
+// Функция проверки валидности номера телефона
+function ValidPhone(userPhone) {
+  let re = /^\+?[78][-\(]?\d{3}\)?-?\d{3}-?\d{2}-?\d{2}$/
+  let valid = re.test(userPhone)
+  return valid
 }
