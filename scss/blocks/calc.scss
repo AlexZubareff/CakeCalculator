@@ -26,8 +26,8 @@
 
   margin: 100px auto;
   position: fixed;
-  height: 300px;
-  width: 350px;
+  // height: 300px;
+  // width: 350px;
   background-color: $background_gray;
   color: $accent_orange;
   border: 2px solid $accent_orange;
@@ -265,6 +265,7 @@
     }
   }
 }
+
 @media screen and (max-width: 1440px) {
   .calc {
     &_cake-form {
@@ -302,6 +303,7 @@
       width: 45%;
 
     }
+
     &_form-input {
 
       background: #fff url("../img/down-arrow.svg") no-repeat calc(100%);
@@ -341,6 +343,7 @@
 
 
     }
+
     &_form-input {
 
       background: #fff url("../img/down-arrow.svg") no-repeat calc(100%);
@@ -375,12 +378,19 @@
 }
 
 @media screen and (max-width: 425px) {
+  .msg-form {
+    row-gap: 15px;
+    width: 250px;
+
+  }
+
   .calc {
     &_cake-form {
       width: 60%;
 
 
     }
+
     &_form-input {
 
       background: #fff url("../img/down-arrow.svg") no-repeat calc(100%);
@@ -414,10 +424,55 @@
 }
 
 @media screen and (max-width: 320px) {
+  .alert-dialog {
+
+    height: 100px;
+    width: 200px;
+
+    &__content {
+      @include font(16px, 800, 22px, 0%, center, $background_gray);
+    }
+  }
+
+  .data-dialog {
+
+    padding: 10px;
+
+    &__content {
+      justify-content: start;
+      row-gap: 10px;
+    }
+  }
+
+  // Форма ввода данных пользователя для заказа
+  .title-2 {
+    @include font(18px, 500, 22px, 0%, center, $accent_orange);
+  }
+
+  .msg-form {
+    row-gap: 10px;
+  }
+
+  .msg-form__label {
+    @include font(14px, 400, 20px, 0%, left, $accent_orange);
+  }
+
+  .msg-form__input {
+    height: 35px;
+  }
+
+  .btn {
+    height: 35px;
+
+    &-close {
+      height: 35px;
+    }
+  }
+
+
   .calc {
     &_cake-form {
       width: 70%;
-
     }
 
     &_form-input {
