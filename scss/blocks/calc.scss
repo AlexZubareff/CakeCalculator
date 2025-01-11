@@ -26,12 +26,11 @@
 
   margin: 100px auto;
   position: fixed;
-  // height: 300px;
-  // width: 350px;
   background-color: $background_gray;
   color: $accent_orange;
   border: 2px solid $accent_orange;
   border-radius: 5px;
+padding: 16px;
   z-index: 1;
 
   &__content {
@@ -425,7 +424,6 @@
 
 @media screen and (max-width: 320px) {
   .alert-dialog {
-
     height: 100px;
     width: 200px;
 
@@ -435,7 +433,6 @@
   }
 
   .data-dialog {
-
     padding: 10px;
 
     &__content {

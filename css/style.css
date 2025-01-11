@@ -197,6 +197,7 @@ body {
   color: #F86624;
   border: 2px solid #F86624;
   border-radius: 5px;
+  padding: 16px;
   z-index: 1;
 }
 .data-dialog__content {
