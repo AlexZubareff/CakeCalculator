@@ -12,10 +12,13 @@ let fruitType = [
   { name: 'apple', price: 400, volume: 1000 },
   { name: 'banana', price: 200, volume: 1000 },
   { name: 'orange', price: 350, volume: 1000 },
+  { name: 'apple', price: 400, volume: 1000 },
+  { name: 'banana', price: 200, volume: 1000 },
+  { name: 'orange', price: 350, volume: 1000 },
 ]
-let userCoast
+
+let userCoast = 0
 let lastUserOrder = []
-let userCakeOrder = ''
 let userJamOrder = ''
 let userFruitOrder = ''
 let userWeightOrder = ''
@@ -28,45 +31,44 @@ let content = document.getElementById('alertContent')
 document.getElementById('calc-form').addEventListener('submit', function (e) {
   e.preventDefault()
 
+  const inputFields = document.querySelectorAll('.calc_form-input')
+  console.log(inputFields)
+
   let currentUserCoast = 0
-  let userCake = this.cake.value
-  let userJam = this.jam.value
-  let userFruit = this.fruit.value
-  let userWeight = this.weight.value
+  let currentSelection = []
 
-  newUserOrder = [this.cake.value, this.jam.value, this.fruit.value, this.weight.value]
+  inputFields.forEach(item => {
+    let inputField = {
+      name: item.name,
+      selectedType: item.value,
+    }
+    // console.log(inputField)
 
-  if (JSON.stringify(newUserOrder) !== JSON.stringify(lastUserOrder)) {
-    for (let i = 0; i < cakeType.length; i++) {
-      if (userCake === cakeType[i].name) {
-        userCakeOrder = cakeType[i].name
-        currentUserCoast += cakeType[i].price * userWeight
-      }
-    }
-    for (let i = 0; i < jamType.length; i++) {
-      if (userJam === jamType[i].name) {
-        userJamOrder = jamType[i].name
-        currentUserCoast += jamType[i].price * userWeight
-      }
-    }
-    for (let i = 0; i < fruitType.length; i++) {
-      if (userFruit === fruitType[i].name) {
-        userFruitOrder = fruitType[i].name
-        currentUserCoast += fruitType[i].price * userWeight
-      }
+    currentSelection.push(inputField)
+  })
+
+  console.log(currentSelection)
+
+  if (JSON.stringify(currentSelection) !== JSON.stringify(lastUserOrder)) {
+    for (let i = 0; i < currentSelection.length - 1; i++) {
+      currentUserCoast += ingredientCoast(
+        currentSelection[i].selectedType,
+        choseData(currentSelection[i].name),
+        currentSelection[currentSelection.length - 1].selectedType
+      )
     }
 
     userCoast = currentUserCoast
     let content = document.getElementById('coast')
     content.innerText = `${currentUserCoast} руб.`
-    lastUserOrder = [this.cake.value, this.jam.value, this.fruit.value, this.weight.value]
+    lastUserOrder = currentSelection
 
     let sendButton = document.getElementById('sendButton')
     sendButton.removeAttribute('disabled', '')
     sendButton.classList.remove('calc_form-button-disabled')
 
-    console.log(userCake, userJam, userFruit, userWeight)
-    console.log(currentUserCoast)
+    // console.log(userCake, userJam, userFruit, userWeight)
+    // console.log(currentUserCoast)
   } else {
     content.innerHTML = `<h1>Для нового расчета измените параметры заказа!</h1>`
     // elementPopup.style.borderColor = 'red'
@@ -81,7 +83,6 @@ document.getElementById('calc-form').addEventListener('submit', function (e) {
 })
 
 // Вешаем слушателя на кнопку Отправить в форме данных пользователя
-
 document.getElementById('tg-form').addEventListener('submit', function (e) {
   e.preventDefault()
 
@@ -114,6 +115,34 @@ document.getElementById('tg-form').addEventListener('submit', function (e) {
   }
 })
 
+//Функция определения источника данных для расчета стоимости ингридиента
+function choseData(dataType) {
+  switch (dataType) {
+    case 'cakeType':
+      return cakeType
+      break
+    case 'jamType':
+      return jamType
+      break
+    case 'fruitType':
+      return fruitType
+      break
+    default:
+      break
+  }
+}
+
+//Функция расчёта стоимости ингридиента в заказе
+function ingredientCoast(ingredient, data, weight) {
+  let coast = 0
+  for (let i = 0; i < data.length; i++) {
+    if (ingredient === data[i].name) {
+      coast = data[i].price * weight
+      return coast
+    }
+  }
+}
+
 // Функция получения данных пользователя
 function openUserDataForm() {
   console.log(userCoast)
@@ -132,8 +161,8 @@ function openUserDataForm() {
     dataElementPopup.show()
   }
 }
-// Функция отправки параметров заказа
 
+// Функция отправки параметров заказа
 function sendOrder(userName, userPhone) {
   const userOrder = {
     name: userName,
